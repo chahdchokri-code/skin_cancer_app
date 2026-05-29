@@ -17,16 +17,14 @@
 ---
 
 ## 📸 Aperçu
+![Login](https://raw.githubusercontent.com/chahdchokri-code/skin_cancer_app/main/screenshots/screenshots/login.png.png)
 
-![Login](https://raw.githubusercontent.com/chahdchokri/skin_cancer_app/main/screenshots/login.png.png)
+![Dashboard](https://raw.githubusercontent.com/chahdchokri-code/skin_cancer_app/main/screenshots/screenshots/dashboard.png.png)
 
-![Dashboard](https://raw.githubusercontent.com/chahdchokri/skin_cancer_app/main/screenshots/dashboard.png)
+![Predict](https://raw.githubusercontent.com/chahdchokri-code/skin_cancer_app/main/screenshots/screenshots/predict.png.png)
 
-![Predict](https://raw.githubusercontent.com/chahdchokri/skin_cancer_app/main/screenshots/predict.png)
+![Patients](https://raw.githubusercontent.com/chahdchokri-code/skin_cancer_app/main/screenshots/screenshots/patients.png.png)
 
-![Patients](https://raw.githubusercontent.com/chahdchokri/skin_cancer_app/main/screenshots/patients.png)
-
-![Result](https://raw.githubusercontent.com/chahdchokri/skin_cancer_app/main/screenshots/result.png)
----
+![Result](https://raw.githubusercontent.com/chahdchokri-code/skin_cancer_app/main/screenshots/screenshots/result.png.png)
 
 ## 🗂️ Structure du projet
