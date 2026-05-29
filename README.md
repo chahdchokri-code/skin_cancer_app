@@ -19,20 +19,19 @@
 ## 📸 Aperçu
 
 ### 🔐 Page de connexion
-![Login](screenshots/login.png)
+![Login](https://raw.githubusercontent.com/chahdchokri/skin_cancer_app/main/screenshots/login.png)
 
 ### 📊 Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](https://raw.githubusercontent.com/chahdchokri/skin_cancer_app/main/screenshots/dashboard.png)
 
 ### 🩺 Nouvelle analyse
-![Predict](screenshots/predict.png)
+![Predict](https://raw.githubusercontent.com/chahdchokri/skin_cancer_app/main/screenshots/predict.png)
 
 ### 📋 Historique patients
-![Patients](screenshots/patients.png)
+![Patients](https://raw.githubusercontent.com/chahdchokri/skin_cancer_app/main/screenshots/patients.png)
 
 ### ✅ Résultat du diagnostic
-![Result](screenshots/result.png)
-
+![Result](https://raw.githubusercontent.com/chahdchokri/skin_cancer_app/main/screenshots/result.png)
 ---
 
 ## 🗂️ Structure du projet
