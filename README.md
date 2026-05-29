@@ -18,7 +18,7 @@
 
 ## 📸 Aperçu
 
-![Login](https://raw.githubusercontent.com/chahdchokri/skin_cancer_app/main/screenshots/login.png)
+![Login](https://raw.githubusercontent.com/chahdchokri/skin_cancer_app/main/screenshots/login.png.png)
 
 ![Dashboard](https://raw.githubusercontent.com/chahdchokri/skin_cancer_app/main/screenshots/dashboard.png)
 
