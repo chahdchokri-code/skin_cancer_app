@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkinAI — Connexion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --em-950: #022c22; --em-900: #064e3b; --em-800: #065f46; --em-700: #047857;
+      --em-600: #059669; --em-500: #10b981; --em-400: #34d399; --em-200: #a7f3d0;
+      --em-100: #d1fae5; --em-50:  #ecfdf5;
+      --gd-900: #78350f; --gd-700: #b45309; --gd-500: #f59e0b; --gd-400: #fbbf24;
+      --gd-300: #fcd34d; --gd-100: #fef3c7; --gd-50:  #fffbeb;
+      --sl-900: #0f172a; --sl-700: #334155; --sl-500: #64748b; --sl-400: #94a3b8;
+      --sl-200: #e2e8f0; --sl-100: #f1f5f9; --sl-50:  #f8fafc;
+      --red-500: #ef4444; --red-100: #fee2e2; --red-800: #991b1b;
+      --bg: #f0faf5; --surface: #ffffff; --border: #d1fae5;
+    }
+
+    @keyframes fadeUp  { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes scaleIn { from{opacity:0;transform:scale(.94)} to{opacity:1;transform:scale(1)} }
+    @keyframes pulse   { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.7;transform:scale(.9)} }
+    @keyframes float   { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+    @keyframes slideR  { from{opacity:0;transform:translateX(16px)} to{opacity:1;transform:translateX(0)} }
+
+    html, body { min-height: 100vh; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg); color: var(--sl-900);
+      display: flex; align-items: center; justify-content: center; padding: 2rem 1rem;
+    }
+
+    body::before {
+      content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+      background-image: linear-gradient(var(--em-200) 1px, transparent 1px),
+                        linear-gradient(90deg, var(--em-200) 1px, transparent 1px);
+      background-size: 56px 56px; opacity: .35;
+    }
+    body::after {
+      content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+      background:
+        radial-gradient(ellipse 900px 600px at 95% -8%,  rgba(16,185,129,.13) 0%, transparent 60%),
+        radial-gradient(ellipse 500px 400px at -5% 95%,  rgba(251,191,36,.10) 0%, transparent 60%),
+        radial-gradient(ellipse 600px 500px at 50% 50%,  rgba(236,253,245,.6) 0%, transparent 70%);
+    }
+
+    .wrapper {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 420px;
+      animation: fadeUp .55s ease both;
+    }
+
+    /* ── BRAND ── */
+    .brand { text-align: center; margin-bottom: 2.2rem; }
+    .brand-mark {
+      width: 58px; height: 58px; border-radius: 16px; margin: 0 auto 1rem;
+      background: linear-gradient(145deg, var(--em-700), var(--em-500));
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 0 1px rgba(5,150,105,.5), 0 8px 22px rgba(5,150,105,.3), inset 0 1px 0 rgba(255,255,255,.25);
+      animation: float 4s ease-in-out infinite;
+      position: relative; overflow: hidden;
+    }
+    .brand-mark::before {
+      content:''; position:absolute; inset:0;
+      background: linear-gradient(135deg, rgba(255,255,255,.15) 0%, transparent 60%);
+    }
+    .brand-mark svg { width:24px; height:24px; fill:none; stroke:#fff; stroke-width:1.8; }
+    .brand-name {
+      font-size: 2rem; font-weight: 800; letter-spacing: -.04em; color: var(--em-950);
+    }
+    .brand-name em {
+      font-style: italic; font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 2.2rem;
+      background: linear-gradient(135deg, var(--em-600) 0%, var(--gd-500) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .brand-sub { font-size: .78rem; color: var(--sl-500); margin-top: .3rem; font-weight: 400; }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 22px;
+      padding: 2.2rem;
+      box-shadow: 0 2px 16px rgba(5,150,105,.08), 0 1px 0 rgba(255,255,255,.9);
+      animation: scaleIn .45s ease .1s both;
+    }
+
+    .card-title {
+      font-size: 1rem; font-weight: 800; color: var(--em-950); margin-bottom: 1.6rem;
+      display: flex; align-items: center; gap: .55rem; letter-spacing: -.02em;
+    }
+    .card-title::before {
+      content:''; width: 4px; height: 18px;
+      background: linear-gradient(180deg, var(--em-500), var(--em-300));
+      border-radius: 4px; flex-shrink: 0;
+    }
+
+    /* flash */
+    .flash {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .8rem 1rem; border-radius: 12px; margin-bottom: 1.1rem;
+      font-size: .84rem; font-weight: 500;
+      animation: slideR .3s ease;
+    }
+    .flash.success { background: var(--em-50); border: 1px solid rgba(5,150,105,.25); color: var(--em-800); }
+    .flash.danger  { background: var(--red-100); border: 1px solid rgba(239,68,68,.25); color: var(--red-800); }
+    .flash.info    { background: var(--gd-50); border: 1px solid rgba(245,158,11,.25); color: var(--gd-900); }
+
+    /* fields */
+    .field { margin-bottom: 1.1rem; }
+    .field label {
+      display: block; font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--sl-500); margin-bottom: .45rem;
+    }
+    .field input {
+      width: 100%; padding: .82rem 1rem;
+      background: var(--sl-50); border: 1.5px solid var(--sl-200); border-radius: 12px;
+      color: var(--sl-900); font-family: 'Plus Jakarta Sans', sans-serif; font-size: .93rem; outline: none;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+    }
+    .field input:focus {
+      border-color: var(--em-500); background: var(--em-50);
+      box-shadow: 0 0 0 3px rgba(16,185,129,.12);
+    }
+    .field input::placeholder { color: var(--sl-400); }
+
+    /* button */
+    .btn-login {
+      width: 100%; padding: .9rem; margin-top: .5rem; border: none; border-radius: 13px; cursor: pointer;
+      background: linear-gradient(135deg, var(--em-700), var(--em-500));
+      color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: .95rem; font-weight: 800;
+      letter-spacing: -.01em;
+      box-shadow: 0 4px 18px rgba(5,150,105,.3), inset 0 1px 0 rgba(255,255,255,.18);
+      transition: transform .15s, box-shadow .2s;
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+    }
+    .btn-login:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(5,150,105,.42); }
+    .btn-login:active { transform: translateY(0); }
+
+    .footer-note { text-align: center; font-size: .74rem; color: var(--sl-400); margin-top: 1.5rem; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-thumb { background: var(--em-200); border-radius: 999px; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="brand">
+    <div class="brand-mark">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 8v4M12 12l3 3"/></svg>
+    </div>
+    <div class="brand-name">Skin<em>AI</em></div>
+    <p class="brand-sub">Plateforme de détection de lésions cutanées par IA</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Connexion</div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for cat, msg in messages %}
+    <div class="flash {{ cat }}">
+      <span>{% if cat == 'success' %}✅{% elif cat == 'danger' %}⚠️{% else %}💡{% endif %}</span>
+      {{ msg }}
+    </div>
+    {% endfor %}
+    {% endwith %}
+
+    <form method="POST">
+      <div class="field">
+        <label>Nom d'utilisateur</label>
+        <input type="text" name="username" placeholder="admin" required autofocus>
+      </div>
+      <div class="field">
+        <label>Mot de passe</label>
+        <input type="password" name="password" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="btn-login">
+        <span>🔐</span> Se connecter
+      </button>
+    </form>
+  </div>
+
+  <p class="footer-note">ENSTAB · Université de Carthage · 2025/2026</p>
+</div>
+</body>
+</html>
